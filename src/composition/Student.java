@@ -1,15 +1,23 @@
 package composition;
 
-public class Student extends Address {
+public class Student {
 
+    private Address address;
     private String name;
     private int age;
 
     public Student(String streetAddress, int zipCode, String state, String phone, String name, int age) {
-        super(streetAddress, zipCode, state, phone);
+        this.address = new Address(streetAddress, zipCode, state, phone);
         this.name = name;
         this.age = age;
     }
+    public  String getStreetAddress() {return address.getStreetAddress();}
+
+    public int getZipCode() {return address.getZipCode();}
+
+    public String getState() {return address.getState();}
+
+    public String getPhone() {return address.getPhone();}
 
     public int getAge() {
         return age;
